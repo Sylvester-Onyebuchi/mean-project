@@ -1,0 +1,29 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-info pt-4">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-1 fw-bolder" routerLink="login">SYLVESTER</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li *ngIf="currentRoute !== '/home'" class="nav-item">
+          <a class="btn btn-success m-2 small fs-2 nav-link" routerLinkActive="active" (click)="navigateTo('login')">LOGIN</a>
+        </li>
+        <li *ngIf="currentRoute !== '/home'" class="nav-item">
+          <a class="btn btn-warning m-2 small fs-2 nav-link" routerLinkActive="active" (click)="navigateTo('signup')" >SIGNUP</a>
+        </li>
+        <li *ngIf="currentRoute == '/home'"  class="nav-item">
+          <a class="nav-link fs-2 btn btn-danger m-2" routerLinkActive="active" (click)="logout()" >Logout</a>
+        </li>
+  
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
